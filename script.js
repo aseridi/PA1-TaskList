@@ -54,7 +54,7 @@ function displayTasks() {
 
         const completedButton = document.createElement("button");
         completedButton.textContent = "Complete";
-
+        completedButton.className = "complete-button";
         completedButton.addEventListener("click", function () {
             task.completed = !task.completed;
             displayTasks();
@@ -62,6 +62,7 @@ function displayTasks() {
 
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
+        deleteButton.className = "delete-button";
         deleteButton.addEventListener("click", function () {
             const index = tasks.findIndex(t => t.id === task.id);
             tasks.splice(index, 1);
