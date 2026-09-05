@@ -67,3 +67,8 @@ button[type=submit] {
 button[type=submit]:hover {
   background-color: #09c946;
 }
+
+/* style complete */
+.completed {
+    text-decoration: line-through;
+}
