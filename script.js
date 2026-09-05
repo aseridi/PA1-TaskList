@@ -41,37 +41,57 @@ function displayTasks() {
     taskList.innerHTML = "";
 
     for (const task of tasks) {
-
-        const el = document.createElement("div");
-        el.className = "task";
-
-        const text = document.createElement("span");
-        text.textContent = `${task.title} - [${task.priority}]`;
+        const el = document.createElement("li");
+        el.className = `task task--${task.priority}`;
 
         if (task.completed) {
-            el.classList.add("completed");
+            el.classList.add("task--completed");
         }
 
-        const completedButton = document.createElement("button");
-        completedButton.textContent = "Complete";
-        completedButton.className = "complete-button";
-        completedButton.addEventListener("click", function () {
+        const body = document.createElement("div");
+        body.className = "task__body";
+
+        const title = document.createElement("span");
+        title.className = "task__title";
+        title.textContent = task.title;
+        body.appendChild(title);
+
+        if (task.description) {
+            const desc = document.createElement("span");
+            desc.className = "task__desc";
+            desc.textContent = task.description;
+            body.appendChild(desc);
+        }
+
+        const badge = document.createElement("span");
+        badge.className = "task__badge";
+        badge.textContent = task.priority;
+
+        const completeButton = document.createElement("button");
+        completeButton.className = "btn btn--complete";
+        completeButton.textContent = task.completed ? "Undo" : "Complete";
+        completeButton.addEventListener("click", function() {
             task.completed = !task.completed;
             displayTasks();
         });
 
         const deleteButton = document.createElement("button");
+        deleteButton.className = "btn btn--delete";
         deleteButton.textContent = "Delete";
-        deleteButton.className = "delete-button";
-        deleteButton.addEventListener("click", function () {
+        deleteButton.addEventListener("click", function() {
             const index = tasks.findIndex(t => t.id === task.id);
             tasks.splice(index, 1);
             displayTasks();
         });
 
-        el.appendChild(text);
-        el.appendChild(completedButton);
-        el.appendChild(deleteButton);
+        const actions = document.createElement("div");
+        actions.className = "task__actions";
+        actions.appendChild(completeButton);
+        actions.appendChild(deleteButton);
+
+        el.appendChild(body);
+        el.appendChild(badge);
+        el.appendChild(actions);
         taskList.appendChild(el);
     }
 }
