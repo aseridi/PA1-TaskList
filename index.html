@@ -1,1 +1,29 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset ="utf-8">
+    <title>My Web Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1 id="form-title"> My Task List</h1>
+    <form id="task-form">
+        <label for="task-input">Task:</label>
+        <input id="task-input" type ="text" placeholder="Task Title">
+        <label for="task-description">Task Description:</label>
+        <input id="task-description" type="text" placeholder="A brief description of the task">
+        <label for ="priority">Priority:</label>
+        <select id="priority">
+            <option value ="Low">low</option>
+            <option value ="Medium">medium</option>
+            <option value ="High">high</option>
+        </select>
+        <button type = "submit">Add Task</button>
+    </form>
+    <div id="task-list">
+
+    </div>
+    <footer></footer>
+</body>
+</html>
