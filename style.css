@@ -1,112 +1,159 @@
+/* reset */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+body,
+h1,
+p,
+ul,
+figure {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
 /*style body */
-body {   
-    max-width: 50%;
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #1b1f24;
+    background-color: #f4f6f8;
+    padding: 40px 16px;
+}
+.page-header {
+    max-width: 640px;
     margin: 0 auto;
 }
-
-#form-title {
-    max-width: 500px;
-    margin: 50px  auto;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 4rem;
+.page-main {
+    max-width: 640px;
+    margin: 0 auto;
+}
+.page-footer {
+    max-width: 640px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding-top: 16px;
+    font-size: 1rem;
+    color: #6b7481;
     text-align: center;
-    color:black;
 }
-
-/* Style inputs */
-  input[type=text], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+.page-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 40px;
 }
-/* style form */
-#task-form {
+.task-form {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
+    gap: 16px;
+    background-color: #ffffff;
+    border: 1px solid #dde2e8;
+    border-radius: 8px;
+    padding: 24px;
 }
-input::placeholder {
-    color: #999;
-    font-style: italic;
+.field {
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+}
+.field_label {
+    font-size: 1rem;
+    font-weight: 600;
+    color:#6b7481
+}
+.field_input {
+    width: 100%;
+    color:#1b1f24;
+    background-color: #f4f6f8;
+    border: 1px solid #dde2e8;
+    border-radius: 6px;
+}
+
+
+.button {
+    color:#ffffff;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    transition: background-color 0.15 ease;
+}
+
+.button:focus-visible {
+    outline: 2px solid #f4f6f8;
+    outline-offset: 2px;
+}
+
+.button-submit {
+    background-color: #1f3a93;
+    padding: 12px 16px;
     font-size: 1.2rem;
-
 }
-
-label {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: black;
-    margin-top: 10px;
+.button-submit:hover{
+    background-color: #0d183e;
 }
-
-select {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 1.5rem;
-    color: black;
-    margin-top: 10px;
+.button-complete {
+    background-color: #0f8a5f;
 }
-/* Style the submit button */
-button[type=submit] {
-  width: 100%;
-  background-color: #040aaa;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 1.5rem;
+.button-complete:hover {
+    background-color: #095037;
 }
-
-/* Add a background color to the submit button on mouse-over */
-button[type=submit]:hover {
-  background-color: #09c946;
+.button-delete {
+    background-color: #ca0707;
+}
+.button-delete:hover {
+    background-color: #770202;
 }
 
 
-/* Style the task list */
-.completed {
-    text-decoration: line-through;
+.taks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 32px;
 }
-
 .task {
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    gap: 16px;
+    background-color: #dde2e8;
+    border: 1px solid #f4f6f8;
+    padding: 12px 16px;
 }
-
-.task span {
-    flex: 1;
-}
-
-#task-list {
-    margin-top: 30px;
-}
-
-.task-buttons {
+.task_body {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    flex-direction: column;
+    flex: 1;
+    min-width: 0;
 }
-.complete-button {
-    background-color: #04aa6d;
-    color: white;
+.task_title {
+    font-weight: 600;
+}
+.task_desc {
+    font-size: 0.8rem;
+    color:#dde2e8;
+}
+.task__badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 4px 8px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+.task_action {
+    display: flex;
+    gap: 8px;
 }
 
-.delete-button {
-    background-color: #c0392b;
-    color: white;
+.task-completed {
+    text-decoration: line-through;
+    color:#4e4e4e;
 }

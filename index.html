@@ -2,28 +2,42 @@
 <html lang="en">
 <head>
     <meta charset ="utf-8">
-    <title>My Web Page</title>
+    <title>Task List Web Page</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1 id="form-title"> My Task List</h1>
-    <form id="task-form">
-        <label for="task-input">Task:</label>
-        <input id="task-input" type ="text" placeholder="Task Title">
-        <label for="task-description">Task Description:</label>
-        <input id="task-description" type="text" placeholder="A brief description of the task">
-        <label for ="priority">Priority:</label>
-        <select id="priority">
-            <option value ="Low">low</option>
-            <option value ="Medium">medium</option>
-            <option value ="High">high</option>
+  <header class="page-header">
+    <h1 class="page-title">My Task List</h1>
+  </header>
+
+  <main class="page-main">
+    <form id="task-form" class="task-form">
+      <div class="field">
+        <label class="field_label" for="task-input">Task</label>
+        <input class="field_input" id="task-input" type="text" placeholder="Task title">
+      </div>
+
+      <div class="field">
+        <label class="field_label" for="task-description">Description</label>
+        <input class="field_input" id="task-description" type="text" placeholder="A brief description of the task">
+      </div>
+
+      <div class="field">
+        <label class="field_label" for="priority">Priority</label>
+        <select class="field_input" id="priority">
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
         </select>
-        <button type = "submit">Add Task</button>
+      </div>
+
+      <button class="button button-submit" type="submit">Add Task</button>
     </form>
-    
-    <div id="task-list">
-    </div>
-    <footer></footer>
+
+    <ul id="task-list" class="task-list"></ul>
+  </main>
+
+  <footer class="page-footer">Ahmed Seridi — ICSI 418Y</footer>
 </body>
 </html>
