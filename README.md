@@ -1,7 +1,15 @@
- # Task List
+# Name and Class
 
-This project is a simple task-list application for creating, viewing, updating, and managing tasks. It is designed to keep tasks organized and demonstrate core software engineering concepts such as structured data, user interaction, and task management.
+Ahmed Seridi
+ICSI 418Y - Software Engineering
+Fall 2026
 
-## Usage
+# My Task List
 
-Run the application, then use its available commands or interface to add tasks, review existing tasks, mark them complete, and remove tasks when they are no longer needed.
+This project is a simple task-list application for creating, viewing, updating, and managing tasks.
+
+# Usage
+
+Open index.html and add tasks
+Mark tasks as complete or delete tasks
+Complete can be undone
